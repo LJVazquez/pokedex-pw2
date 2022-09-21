@@ -1,0 +1,47 @@
+/* * {
+	border: 1px solid red;
+} */
+
+.placeholder-white::placeholder {
+	color: white;
+}
+
+.pixel-font {
+	font-family: 'Press Start 2P', cursive;
+}
+
+.pokedex-img {
+	height: 100px;
+}
+
+.subtitle {
+	font-size: 20px;
+}
+
+.poke-card {
+	height: 80px;
+}
+
+.poke-card__img {
+	height: 50px;
+	width: 50px;
+}
+
+.poke-card__type {
+	height: 18px;
+}
+
+.detail__img {
+	height: 300px;
+	width: 100%;
+	object-fit: contain;
+}
+
+.detail__attack-icon {
+	height: 2rem;
+	width: 2rem;
+}
+
+.detail__type {
+	width: 120px;
+}
