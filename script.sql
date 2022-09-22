@@ -188,3 +188,14 @@ VALUES
         1
     )
   );
+
+CREATE TABLE IF NOT EXISTS usuarios (
+                                        id INT auto_increment PRIMARY KEY NOT NULL,
+                                        usuario VARCHAR(100) NOT NULL,
+    clave VARCHAR(100) NOT NULL);
+
+INSERT INTO usuarios(usuario,clave) VALUES
+                                        ("admin","admin"),
+                                        ("Gustavo","Gustavo"),
+                                        ("usuario1","1234"),
+                                        ("root","root1234");

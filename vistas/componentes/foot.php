@@ -2,18 +2,18 @@
 
  <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="modal-login-label" aria-hidden="true">
      <div class="modal-dialog">
-         <form action="./login.php" class="modal-content" method="POST">
+         <form action="" class="modal-content" method="POST">
 
              <div class="modal-header bg-danger">
-                 <h5 class="modal-title text-white" id="modal-login-label">¿Borrar pokemon?</h5>
+                 <h5 class="modal-title text-white" id="modal-login-label">Inicie Sesión para modificar Pokemones</h5>
                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body">
                  <div class="input-group mb-3">
-                     <input type="text" class="form-control" name="usuario" placeholder="Usuario" aria-label="usuario" required>
+                     <input type="text" class="form-control" name="user" placeholder="Usuario" aria-label="usuario" required>
                  </div>
                  <div class="input-group mb-3">
-                     <input type="text" class="form-control" name="contraseña" placeholder="Contraseña" aria-label="contraseña" required>
+                     <input type="password" class="form-control" name="password" placeholder="Contraseña" aria-label="contraseña" required>
                  </div>
              </div>
              <div class="modal-footer">

@@ -19,7 +19,7 @@
                 <button type="button" class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#modal-login">
                     Login
                 </button>
-                <form class="d-flex" role="search" method="GET" action="./search.php">
+                <form class="d-flex" role="search" method="POST" action="./login.php">
                     <input name="searchParam" class="form-control me-2 rounded-0 bg-danger text-white placeholder-white" type="search" placeholder="Buscar" value="<?= isset($_GET['searchParam']) ? $_GET['searchParam'] : "" ?>">
                 </form>
             </div>
