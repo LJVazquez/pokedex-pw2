@@ -1,27 +1,22 @@
 <?php
 include_once("./componentes/header.php");
 include_once("../utils/bd.php");
-include_once ("../utils/user.php");
-include_once ("../utils/user_Session.php");
+
 
 $pokeDb = new PokeBd();
 $pokeData = $pokeDb->fetchAllPokemons();
 
-$userSession = new UserSession();
-$user = new User();
 
-if(isset($_SESSION['user'])){
-    echo "Hay Sesión";
-}elseif (isset($_POST['user']) && isset($_POST['password'])){
-    echo "Validación de Login";
+if (isset($_SESSION['user_id'])) {
+    $records = $this->connection->prepare('SELECT id, usuario, clave FROM usuarios WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    $userForm = $_POST['user'];
-    $passForm = $_POST['password'];
+    $user = null;
 
-    if($user->userExist($userForm, $passForm)){
-        echo "Usuario Validado";
-    }else{
-        echo "Usuario y/o contraseña incorrecta.";
+    if (count($results) > 0) {
+        $user = $results;
     }
 }
 

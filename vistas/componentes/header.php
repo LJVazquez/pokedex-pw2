@@ -20,7 +20,7 @@
                     Login
                 </button>
                 <form class="d-flex" role="search" method="POST" action="./login.php">
-                    <input name="searchParam" class="form-control me-2 rounded-0 bg-danger text-white placeholder-white" type="search" placeholder="Buscar" value="<?= isset($_GET['searchParam']) ? $_GET['searchParam'] : "" ?>">
+                    <input name="searchParam" class="form-control me-2 rounded-0 bg-danger text-white placeholder-white" type="search" placeholder="Buscar" value="<?= isset($_POST['searchParam']) ? $_POST['searchParam'] : "" ?>">
                 </form>
             </div>
         </div>

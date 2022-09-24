@@ -6,7 +6,6 @@ class BaseDatos
     private $user;
     private $password;
     private $dbname;
-    private $charset;
 
     private $database;
 
@@ -18,7 +17,6 @@ class BaseDatos
         $this->user = $dbData['USER'];
         $this->password = $dbData['PASSWORD'];
         $this->dbname = $dbData['DBNAME'];
-        $this->charset = 'utf8mb4';
 
         $this->database = new mysqli($this->host, $this->user, $this->password, $this->dbname, $this->port)
             or die('Error en conexion a db' . mysqli_connect_error());
@@ -31,20 +29,12 @@ class BaseDatos
 
     function connect(){
 
-        try{
-
-            $connection = "mysql:host=" . $this->host . ";dbname=" . $this->dbname . ";charset=" . $this->charset;
-            $options = [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_EMULATE_PREPARES => false,
-            ];
-            $pdo = new PDO($connection, $this->user, $this->password, $options);
-
-            return $pdo;
-
-        }catch(PDOException $e){
-            print_r('Error connection: ' . $e->getMessage());
+        try {
+            $this->database = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname);
+        } catch (PDOException $e) {
+            die('Connection Failed: ' . $e->getMessage());
         }
+
     }
 
     public function selectAll($query)

@@ -2,7 +2,7 @@
 
  <div class="modal fade" id="modal-login" tabindex="-1" aria-labelledby="modal-login-label" aria-hidden="true">
      <div class="modal-dialog">
-         <form action="" class="modal-content" method="POST">
+         <form action="../vistas/login.php" class="modal-content" method="POST">
 
              <div class="modal-header bg-danger">
                  <h5 class="modal-title text-white" id="modal-login-label">Inicie Sesión para modificar Pokemones</h5>
