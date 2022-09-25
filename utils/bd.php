@@ -27,6 +27,7 @@ class BaseDatos
         $this->database->close();
     }
 
+    /*
     function connect(){
 
         try {
@@ -36,6 +37,7 @@ class BaseDatos
         }
 
     }
+    */
 
     public function selectAll($query)
     {
