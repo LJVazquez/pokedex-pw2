@@ -188,3 +188,15 @@ VALUES
         1
     )
   );
+
+CREATE TABLE
+  IF NOT EXISTS usuario (
+    id INT auto_increment PRIMARY KEY NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    pass VARCHAR(255) NOT NULL
+  );
+
+INSERT INTO
+  usuario (nombre, pass)
+VALUES
+  ('admin', '1234');

@@ -34,7 +34,9 @@ $isLogged = isset($_SESSION['logged']);
     </nav>
 
     <div class="container-fluid mt-3">
-        <div class="text-end p-0"><a class="btn btn-outline-danger me-3 rounded-0" href="./create.php">Agregar pokemon</a></div>
+        <?php if ($isLogged) { ?>
+            <div class="text-end p-0"><a class="btn btn-outline-danger me-3 rounded-0" href="./create.php">Agregar pokemon</a></div>
+        <?php } ?>
         <div class="container mt-2">
             <a class="d-flex align-items-center justify-content-center mb-5 text-decoration-none" href="./index.php">
                 <img src="../img/pokedex.gif" alt="pokedex" class="pokedex-img me-4">

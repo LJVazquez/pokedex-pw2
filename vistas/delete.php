@@ -1,7 +1,9 @@
 <?php
+session_start();
 include_once("../utils/bd.php");
 include_once("verificaeSesion.php");
 $pokeDb = new PokeBd();
+
 
 if (!isset($_POST['submit'])) {
     header("Location: index.php");

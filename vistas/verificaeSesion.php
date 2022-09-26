@@ -1,5 +1,4 @@
 <?php
-if (!isset($_SESSION["logueado"])) {
-    echo  session_destroy();
+if (!isset($_SESSION["logged"])) {
     header("location: login.php");
 }
