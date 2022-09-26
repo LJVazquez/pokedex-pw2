@@ -19,7 +19,7 @@ $loginError = $_SESSION['login_error'] ?? [];
             <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="contraseña" placeholder="Contraseña" required>
+            <input type="password" class="form-control" name="contraseña" placeholder="Contraseña" required>
         </div>
         <div class="modal-footer" style="text-align: center">
             <button type="submit" value="submit" class="btn btn-outline-danger">Login</button>
