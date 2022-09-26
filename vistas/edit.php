@@ -1,7 +1,6 @@
 <?php
 include_once("./componentes/header.php");
 include_once("../utils/bd.php");
-//include_once ("verificaeSesion.php");
 
 $pokeBd = new PokeBd();
 $types = $pokeBd->fetchTypes();
@@ -9,7 +8,6 @@ $pokeId = $_GET['id'];
 $poke = $pokeBd->fetchPokemonById($pokeId);
 
 
-session_start();
 $previousData = $_SESSION['data'] ?? [];
 $errors = $_SESSION['errors'] ?? [];
 $messages = $_SESSION['messages'] ?? [];

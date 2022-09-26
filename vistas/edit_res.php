@@ -26,7 +26,6 @@ if ($_FILES['imagen']['error'] != 0 && $_FILES['imagen']['error'] != 4) {
 }
 
 if (count($errors) != 0) {
-    session_start();
     $_SESSION['errors'] = $errors;
     $_SESSION['data'] = $_POST;
     header("Location: edit.php?id=$id");
@@ -53,7 +52,6 @@ if (strlen($_FILES['imagen']['name']) === 0) {
     move_uploaded_file($imagen['tmp_name'], "../img/pokemons/$nombreImagen");
 };
 
-session_start();
 
 $isUpdateSuccessful = $pokeDb->updatePokemon($id, $numero, $nombre, $descripcion, $nombreImagen, $tipo1, $tipo2);
 

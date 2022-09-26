@@ -22,7 +22,6 @@ if (strlen($_FILES['imagen']['name']) === 0 || !str_contains($_FILES['imagen']['
 }
 
 if (count($errors) > 0) {
-    session_start();
     $_SESSION['errors'] = $errors;
     $_SESSION['data'] = $_POST;
     header('Location: create.php');

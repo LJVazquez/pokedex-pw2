@@ -1,6 +1,6 @@
 <?php
 include_once("../utils/bd.php");
-include_once ("verificaeSesion.php");
+include_once("verificaeSesion.php");
 $pokeDb = new PokeBd();
 
 if (!isset($_POST['submit'])) {
@@ -9,7 +9,6 @@ if (!isset($_POST['submit'])) {
 
 $id = $_POST['id'];
 
-session_start();
 $isDeleteSuccessful = $pokeDb->deletePokemon($id);
 
 if ($isDeleteSuccessful) {

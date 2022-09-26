@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLogged = isset($_SESSION['logged']);
+?>
+
 <!doctype html>
 <html>
 
@@ -16,7 +21,11 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.php"><img src="../img/pokeball.gif" alt="pokedex" height="30"></a>
             <div class="d-flex">
-                <a href="./login.php" style="list-style: none"><button type="button" class="btn btn-outline-light me-3"  > login</button></a>
+                <?php if ($isLogged) { ?>
+                    <a href="./close_session.php" style="list-style: none"><button type="button" class="btn btn-outline-light me-3"> Cerrar sesion</button></a>
+                <?php } else { ?>
+                    <a href="./login.php" style="list-style: none"><button type="button" class="btn btn-outline-light me-3"> login</button></a>
+                <?php } ?>
                 <form class="d-flex" role="search" method="GET" action="./search.php">
                     <input name="searchParam" class="form-control me-2 rounded-0 bg-danger text-white placeholder-white" type="search" placeholder="Buscar" value="<?= isset($_GET['searchParam']) ? $_GET['searchParam'] : "" ?>">
                 </form>

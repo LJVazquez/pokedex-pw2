@@ -1,30 +1,21 @@
 <?php
-
 include_once("../utils/bd.php");
 
-//include_once ("./componentes/foot.php");
+session_start();
 
-$usuario1=$_GET["usuario"];
-$clave=$_GET["contraseña"];
+$usuario1 = $_GET["usuario"];
+$clave = $_GET["contraseña"];
 
-$database= new BaseDatos();
-$sql="SELECT * FROM usuario WHERE nombre='$usuario1' AND pass='$clave'";
+$database = new BaseDatos();
+$sql = "SELECT * FROM usuario WHERE nombre='$usuario1' AND pass='$clave'";
 
-$resultado =$database->selectAll($sql);
-var_dump($resultado);
-if($resultado){
-    session_start();
-    $_SESSION["logueado"]=true;
+$resultado = $database->selectAll($sql);
 
-    header("location:index.php");
-
-}else {
-    session_start();
-    session_destroy();
-  header("location:login.php");
-
-exit();
-
-    echo "contraseña incorrecta";
-
+if (count($resultado) > 0) {
+    $_SESSION['messages'] =  ['login_exitoso'];
+    $_SESSION["logged"] = true;
+    header("Location:index.php");
+} else {
+    $_SESSION["login_error"] = true;
+    header("Location:login.php");
 }

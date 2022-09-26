@@ -5,7 +5,6 @@ include_once("../utils/bd.php");
 $pokeDb = new PokeBd();
 $pokeData = $pokeDb->fetchAllPokemons();
 
-session_start();
 $previousData = $_SESSION['data'] ?? [];
 $errors = $_SESSION['errors'] ?? [];
 $messages = $_SESSION['messages'] ?? [];
@@ -18,6 +17,24 @@ $messages = $_SESSION['messages'] ?? [];
             <?php if (in_array('borrado_exitoso', $messages)) { ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     ¡Pokemon eliminado con exito!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="col-12">
+            <?php if (in_array('unlogged', $messages)) { ?>
+                <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                    Sesion cerrada con exito.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="col-12">
+            <?php if (in_array('login_exitoso', $messages)) { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Logeado con exito!
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php } ?>
