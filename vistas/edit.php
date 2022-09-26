@@ -1,6 +1,7 @@
 <?php
 include_once("./componentes/header.php");
 include_once("../utils/bd.php");
+//include_once ("verificaeSesion.php");
 
 $pokeBd = new PokeBd();
 $types = $pokeBd->fetchTypes();

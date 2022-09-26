@@ -1,6 +1,7 @@
 <?php
 include_once("./componentes/header.php");
 include_once("../utils/bd.php");
+
 $pokeDb = new PokeBd();
 $pokeData = $pokeDb->fetchAllPokemons();
 
@@ -50,4 +51,5 @@ $messages = $_SESSION['messages'] ?? [];
 unset($_SESSION['data']);
 unset($_SESSION['errors']);
 unset($_SESSION['messages']);
+
 ?>

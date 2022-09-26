@@ -16,9 +16,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.php"><img src="../img/pokeball.gif" alt="pokedex" height="30"></a>
             <div class="d-flex">
-                <button type="button" class="btn btn-outline-light me-3" data-bs-toggle="modal" data-bs-target="#modal-login">
-                    Login
-                </button>
+                <a href="./login.php" style="list-style: none"><button type="button" class="btn btn-outline-light me-3"  > login</button></a>
                 <form class="d-flex" role="search" method="GET" action="./search.php">
                     <input name="searchParam" class="form-control me-2 rounded-0 bg-danger text-white placeholder-white" type="search" placeholder="Buscar" value="<?= isset($_GET['searchParam']) ? $_GET['searchParam'] : "" ?>">
                 </form>

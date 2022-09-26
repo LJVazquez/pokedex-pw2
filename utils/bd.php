@@ -11,7 +11,7 @@ class BaseDatos
 
     function __construct()
     {
-        $dbData = parse_ini_file('../db.ini.blank');
+        $dbData = parse_ini_file('../db.ini');
         $this->host = $dbData['HOST'];
         $this->port = $dbData['PORT'];
         $this->user = $dbData['USER'];

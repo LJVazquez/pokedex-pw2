@@ -1,10 +1,12 @@
 <?php include_once("./componentes/header.php");
 include_once("../utils/bd.php");
+include_once ("verificaeSesion.php");
+
 $pokeDb = new PokeBd();
 $pokeId = $_GET['id'];
 $poke = $pokeDb->fetchPokemonById($pokeId);
 
-session_start();
+//session_start();
 $previousData = $_SESSION['data'] ?? [];
 $errors = $_SESSION['errors'] ?? [];
 $messages = $_SESSION['messages'] ?? [];
