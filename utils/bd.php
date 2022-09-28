@@ -116,6 +116,14 @@ class PokeBd
     'DELETE FROM pokemon
     WHERE id = ?;';
 
+    private $createUserQuery =
+        'INSERT INTO usuario (nombre,pass) 
+        VALUES (?,?);';
+
+    private $fetchUserByIdQuery =
+        'SELECT u.id, u.nombre, u.pass
+    FROM usuario u
+    WHERE u.id = ?;';
 
 
     function __construct()
@@ -208,5 +216,36 @@ class PokeBd
     public function fetchTypes()
     {
         return $this->database->selectAll($this->fetchTypesQuery);
+    }
+
+    public function fetchUserById($id)
+    {
+        $statementTypes = 'i';
+        $statementValues = [$id];
+        $data = $this->database->selectPreparedStatement(
+            $this->fetchUserByIdQuery,
+            $statementTypes,
+            $statementValues
+        );
+
+        if ($data) {
+            return $data[0];
+        }
+    }
+
+    public function createUser($nombre, $pass){
+        $statementTypes = 'ss'; //nombre, pass
+        $statementValues = [$nombre, $pass];
+        $userId = $this->database->insertPreparedStatement(
+            $this->createUserQuery,
+            $statementTypes,
+            $statementValues
+        );
+
+        if ($userId) {
+            return $this->fetchUserById($userId);
+        }
+
+        return null;
     }
 }
